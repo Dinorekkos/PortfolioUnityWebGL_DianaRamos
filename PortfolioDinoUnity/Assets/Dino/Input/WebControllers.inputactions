@@ -1,0 +1,34 @@
+{
+    "name": "WebControllers",
+    "maps": [
+        {
+            "name": "MouseActions",
+            "id": "5c569780-b7a7-4e60-a140-dc2efde4acfe",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "441d051f-c26c-4dc4-951d-b3876fa54826",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bc251e3e-5df9-4008-8818-4d2c87ca6ac1",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
