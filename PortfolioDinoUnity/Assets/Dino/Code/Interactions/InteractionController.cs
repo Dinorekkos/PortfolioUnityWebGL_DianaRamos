@@ -4,7 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.InputSystem;
 
-namespace DINO.Code
+namespace DINO
 { 
     public class InteractionController : MonoBehaviour
     {
