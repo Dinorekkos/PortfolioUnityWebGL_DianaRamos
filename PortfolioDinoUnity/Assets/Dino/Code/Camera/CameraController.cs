@@ -22,26 +22,30 @@ public class CameraController : MonoBehaviour
     [SerializeField] private CameraStates cameraState;
     [TabGroup("Camera Max Positions")]
     
+    public static CameraController Instance;
     
     private Vector2 _cameraDelta;
     private bool _isCameraRotating;
     private bool _isBusy;
 
     private float _xRotation;
-    
+
     #endregion
 
 
     #region Unity Methods
     private void Awake()
     {
-        _xRotation = transform.rotation.eulerAngles.x;
-        homePosition = transform.position;
+        Instance = this;
     }
 
     private void Start()
     {
-        SetCameraState(CameraStates.Home);
+        _xRotation = transform.rotation.eulerAngles.x;
+        homePosition = transform.position;
+        cameraState = CameraStates.Home;
+        
+       
     }
 
     private void LateUpdate()
@@ -70,23 +74,20 @@ public class CameraController : MonoBehaviour
     
     
     #region Public Methods
-
-    [Button(ButtonSizes.Medium)]
-    [GUIColor(0.6f,1,0.6f)]
-    public void DoTransition(Vector3 targetPosition)
-    {
-        if (transform.position == targetPosition)
-        {
-            targetPosition = cameraState switch
-            {
-                CameraStates.Home => cityPosition,
-                CameraStates.City => homePosition,
-            };
-        }
-        transform.DOMove(targetPosition, transitionSpeed).SetEase(Ease.OutQuad).OnComplete(() =>
-           SetCameraState(CameraStates.City));
-    }
     
+    public void ChangeCameraTo(CameraStates state)
+    {
+        cameraState = state;
+        
+        Vector3 targetPosition = cameraState switch
+        {
+            CameraStates.Home => homePosition,
+            CameraStates.City => cityPosition,
+            
+        };    
+        DoTransition(targetPosition);
+        
+    }
     public void OnLook(InputAction.CallbackContext context)
     {
         _cameraDelta = context.action.ReadValue<Vector2>();
@@ -137,12 +138,14 @@ public class CameraController : MonoBehaviour
 
         return new Vector3(_xRotation, endValue, 0.0f);
     }
-    
-    
-    private void SetCameraState(CameraStates state)
+    [Button(ButtonSizes.Medium)]
+    [GUIColor(0.6f,1,0.6f)]
+    private void DoTransition(Vector3 targetPosition)
     {
-        cameraState = state;
+        transform.DOMove(targetPosition, transitionSpeed).SetEase(Ease.OutQuad).OnComplete(() =>
+            ChangeCameraTo(CameraStates.City));
     }
+   
     
     #endregion
 }

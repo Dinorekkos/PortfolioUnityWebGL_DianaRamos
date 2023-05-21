@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/DINO/Code/UI/HomeUI.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -99,7 +102,7 @@
       <workItem from="1675299296534" duration="4983000" />
       <workItem from="1675904392351" duration="2914000" />
       <workItem from="1675986809197" duration="3112000" />
-      <workItem from="1684618777908" duration="7802000" />
+      <workItem from="1684618777908" duration="10488000" />
     </task>
     <servers />
   </component>
