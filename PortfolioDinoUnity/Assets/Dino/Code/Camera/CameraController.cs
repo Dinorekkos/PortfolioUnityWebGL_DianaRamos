@@ -14,7 +14,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 cityPosition;
     
     [TabGroup("Camera Settings")]
-    [SerializeField] private float rotationSpeed = 0.5f;
+    [SerializeField] private float rotationSpeed = 0.5f;  
+    [TabGroup("Camera Settings")]
+    [SerializeField] private float movementSpeed = 0.5f;
     [TabGroup("Camera Settings")]
     [SerializeField] private float transitionSpeed = 1f;
     
@@ -23,10 +25,14 @@ public class CameraController : MonoBehaviour
     [TabGroup("Camera Max Positions")]
     
     public static CameraController Instance;
-    
+    public CameraStates CameraState => cameraState;
+    public event Action OnCompleteTransition;
+    public event Action OnStartTransition;
+
     private Vector2 _cameraDelta;
     private bool _isCameraRotating;
     private bool _isBusy;
+    private bool _isCameraMoving;
 
     private float _xRotation;
 
@@ -52,12 +58,12 @@ public class CameraController : MonoBehaviour
     {
         if (cameraState != CameraStates.City) return;
 
-        // if (_isCameraMoving)
-        // {
-        //     Vector3 cameraPosition = transform.right * (_cameraDelta.x * -movementSpeed);
-        //     cameraPosition += transform.up * (_cameraDelta.y * -movementSpeed);
-        //     transform.position += cameraPosition * Time.deltaTime;
-        // }
+        if (_isCameraMoving)
+        {
+            Vector3 cameraPosition = transform.right * (_cameraDelta.x * -movementSpeed);
+            cameraPosition += transform.up * (_cameraDelta.y * -movementSpeed);
+            transform.position += cameraPosition * Time.deltaTime;
+        }
 
         if (_isCameraRotating)
         {
@@ -78,7 +84,6 @@ public class CameraController : MonoBehaviour
     public void ChangeCameraTo(CameraStates state)
     {
         cameraState = state;
-        
         Vector3 targetPosition = cameraState switch
         {
             CameraStates.Home => homePosition,
@@ -86,6 +91,7 @@ public class CameraController : MonoBehaviour
             
         };    
         DoTransition(targetPosition);
+        
         
     }
     public void OnLook(InputAction.CallbackContext context)
@@ -95,7 +101,7 @@ public class CameraController : MonoBehaviour
     
     public void OnMove(InputAction.CallbackContext context)
     {
-        // _isCameraMoving = context.started || context.performed;
+        _isCameraMoving = context.started || context.performed;
     }
     
     public void OnRotate(InputAction.CallbackContext context)
@@ -142,8 +148,12 @@ public class CameraController : MonoBehaviour
     [GUIColor(0.6f,1,0.6f)]
     private void DoTransition(Vector3 targetPosition)
     {
+        OnStartTransition?.Invoke();
         transform.DOMove(targetPosition, transitionSpeed).SetEase(Ease.OutQuad).OnComplete(() =>
-            ChangeCameraTo(CameraStates.City));
+        {
+            OnCompleteTransition?.Invoke();
+        });
+
     }
    
     
