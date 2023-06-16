@@ -33,6 +33,7 @@ public class CameraController : MonoBehaviour
     private bool _isCameraRotating;
     private bool _isBusy;
     private bool _isCameraMoving;
+    private Vector3 _initialRotation;
 
     private float _xRotation;
 
@@ -50,6 +51,7 @@ public class CameraController : MonoBehaviour
         _xRotation = transform.rotation.eulerAngles.x;
         homePosition = transform.position;
         cameraState = CameraStates.Home;
+        _initialRotation = transform.rotation.eulerAngles; 
         
        
     }
@@ -90,6 +92,8 @@ public class CameraController : MonoBehaviour
             CameraStates.City => cityPosition,
             
         };    
+        
+        ResetCameraRotation();
         DoTransition(targetPosition);
         
         
@@ -120,7 +124,11 @@ public class CameraController : MonoBehaviour
     #endregion
     
     #region Private Methods
-    
+
+    private void ResetCameraRotation()
+    {
+        transform.rotation = Quaternion.Euler(_initialRotation);
+    }
     private void  SnappedRotation()
     {
         transform.DORotate(SnappedVector(), 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
@@ -152,6 +160,7 @@ public class CameraController : MonoBehaviour
         transform.DOMove(targetPosition, transitionSpeed).SetEase(Ease.OutQuad).OnComplete(() =>
         {
             OnCompleteTransition?.Invoke();
+
         });
 
     }

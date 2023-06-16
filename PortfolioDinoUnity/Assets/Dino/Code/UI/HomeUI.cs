@@ -21,12 +21,12 @@ namespace DINO
             _cityButton.transform.DOScale(1.2f, 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InQuad);
             _cityButton.onClick.AddListener(() =>
             {
-                CameraController.Instance.ChangeCameraTo(CameraStates.City);
+                HomeController.Instance.GoToCity();
                 HandleUIVisible();
             });
             _homeButton.onClick.AddListener(() =>
             {
-                 CameraController.Instance.ChangeCameraTo(CameraStates.Home);
+                HomeController.Instance.GoToHome();
                 HandleUIVisible();
             });
             
