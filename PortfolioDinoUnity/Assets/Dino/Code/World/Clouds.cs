@@ -16,10 +16,7 @@ public class Clouds : MonoBehaviour
         MoveClouds();
     }
 
-    void Update()
-    {
-        
-    }
+    
     
     
     void MoveClouds()

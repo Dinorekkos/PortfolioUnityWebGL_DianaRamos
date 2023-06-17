@@ -67,11 +67,11 @@ public class CameraController : MonoBehaviour
             transform.position += cameraPosition * Time.deltaTime;
         }
 
-        if (_isCameraRotating)
-        {
-            transform.Rotate(new Vector3(_xRotation,-_cameraDelta.x * rotationSpeed , 0.0f));
-            transform.rotation =  Quaternion.Euler(_xRotation,transform.rotation.eulerAngles.y,0.0f);
-        }
+        // if (_isCameraRotating)
+        // {
+        //     transform.Rotate(new Vector3(_xRotation,-_cameraDelta.x * rotationSpeed , 0.0f));
+        //     transform.rotation =  Quaternion.Euler(_xRotation,transform.rotation.eulerAngles.y,0.0f);
+        // }
         
     }
 
