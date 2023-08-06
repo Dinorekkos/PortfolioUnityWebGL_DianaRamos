@@ -15,14 +15,9 @@ public class Clouds : MonoBehaviour
     {
         MoveClouds();
     }
-
-    
-    
     
     void MoveClouds()
     {
         clouds.transform.DOMove(cloudsLimit.position, time).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
     }
-    
-    
 }
