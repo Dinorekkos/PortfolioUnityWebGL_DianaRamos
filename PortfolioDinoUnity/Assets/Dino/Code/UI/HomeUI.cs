@@ -10,11 +10,17 @@ namespace DINO
 {
     public class HomeUI : MonoBehaviour 
     {
+        #region Serialized Fields
         [SerializeField] private Button _cityButton;
         [SerializeField] private Button _homeButton;
         [SerializeField] private CanvasGroup homeCanvasGroup;
         [SerializeField] private CanvasGroup cityCanvasGroup;
+        #endregion
+
+        #region Unity Methods
+
         
+
         void Start()
         {
             _homeButton.image.DOFade(0, 0);
@@ -31,14 +37,11 @@ namespace DINO
             });
             
         }
-        
 
-        void Update()
-        {
-            
-        }
-        
-        void HandleUIVisible()
+        #endregion
+
+        #region private methods
+        private void HandleUIVisible()
         {
             CameraStates cameraState = CameraController.Instance.CameraState;
             switch (cameraState)
@@ -58,5 +61,7 @@ namespace DINO
                 
             }
         }
+        #endregion
+
     }
 }
