@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Initializer : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Hello Word!");
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+    
 }

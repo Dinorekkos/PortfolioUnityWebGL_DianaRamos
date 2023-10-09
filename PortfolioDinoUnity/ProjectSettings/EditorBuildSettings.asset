@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DINO/Scenes_/HomeTest.unity
-    guid: d3def3f860aa9294bb1bd29902696656
+    path: Assets/DINO/Scenes_/City.unity
+    guid: ed295519a89a1de4c98ce9fc2101c2fb
   m_configObjects: {}
