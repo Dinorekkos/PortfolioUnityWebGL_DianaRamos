@@ -8,17 +8,19 @@ using DINO;
 public class CameraController : MonoBehaviour
 {
     #region Variables
+    
     [TabGroup("Camera Transitions")]
     [SerializeField] private Vector3 homePosition;
     [TabGroup("Camera Transitions")]
     [SerializeField] private Vector3 cityPosition;
-    
+
     [TabGroup("Camera Settings")]
-    [SerializeField] private float rotationSpeed = 0.5f;  
+    [SerializeField] private float zoom = 1f; 
     [TabGroup("Camera Settings")]
     [SerializeField] private float movementSpeed = 0.5f;
     [TabGroup("Camera Settings")]
     [SerializeField] private float transitionSpeed = 1f;
+    
     
     [TabGroup("Camera States")]
     [SerializeField] private CameraStates cameraState;
@@ -28,12 +30,17 @@ public class CameraController : MonoBehaviour
     public CameraStates CameraState => cameraState;
     public event Action OnCompleteTransition;
     public event Action OnStartTransition;
+    public Vector2 CameraDelta => _cameraDelta;
 
     private Vector2 _cameraDelta;
     private bool _isCameraRotating;
     private bool _isBusy;
     private bool _isCameraMoving;
     private Vector3 _initialRotation;
+    
+    private bool _isCameraZooming;
+    private Vector2 _primaryTouchPosition = Vector2.zero;
+    private Vector2 _secondaryTouchPosition = Vector2.zero;
 
     private float _xRotation;
 
@@ -65,6 +72,11 @@ public class CameraController : MonoBehaviour
             Vector3 cameraPosition = transform.right * (_cameraDelta.x * -movementSpeed);
             cameraPosition += transform.up * (_cameraDelta.y * -movementSpeed);
             transform.position += cameraPosition * Time.deltaTime;
+        }
+
+        if (_isCameraZooming)
+        {
+            Debug.Log("Zooming");
         }
 
         // if (_isCameraRotating)
@@ -111,7 +123,7 @@ public class CameraController : MonoBehaviour
     public void OnRotate(InputAction.CallbackContext context)
     {
         if (_isBusy) return;
-
+    
         _isCameraRotating = context.started || context.performed;
         
         if (context.canceled)
@@ -120,6 +132,20 @@ public class CameraController : MonoBehaviour
             SnappedRotation();
         }
     }
+    public void OnZoom(InputAction.CallbackContext context)
+    {
+        _isCameraZooming = context.started || context.performed;
+        
+        // if (context.started)
+        // {
+        //     // transform.position += transform.forward * 0.5f;
+        // }
+        // else if (context.canceled)
+        // {
+        //     // transform.position -= transform.forward * 0.5f;
+        // }
+    }
+    
     
     #endregion
     

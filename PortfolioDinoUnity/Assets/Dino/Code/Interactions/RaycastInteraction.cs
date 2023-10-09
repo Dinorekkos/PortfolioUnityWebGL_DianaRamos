@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using DINO;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class RaycastInteraction : MonoBehaviour
+{
+    [SerializeField] private LayerMask layerInteractions;
+    [SerializeField] private float raycastDistance = 100f;
+    [SerializeField] CameraController cameraController;
+    [SerializeField] private InputActionReference mousePosition;
+    
+    private Vector2 _senderPosition;
+    private bool _isInteracting = false;
+    void Start()
+    {
+        // mousePosition.action.Ini
+    }
+
+    void Update()
+    {
+        
+    }
+
+
+    public void OnInteraction(InputAction.CallbackContext context)
+    {
+
+        if(cameraController.CameraState != CameraStates.City) return;
+        
+        _senderPosition = mousePosition.action.ReadValue<Vector2>();
+        _isInteracting = context.started || context.performed;
+        
+        if (_isInteracting)
+        {
+            SendRaycastFromMousePos();
+        }
+        
+    }
+
+
+    private void SendRaycastFromMousePos()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(_senderPosition);
+        
+        
+        if (Physics.Raycast(ray, out hit, raycastDistance, layerInteractions))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.red, 1f);
+        }
+    }
+}
