@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using DINO;
 using UnityEngine;
 
 public class BuildingObject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] ProjectData projectData;
+    
+    public ProjectData ProjectData => projectData;
     void Start()
     {
         

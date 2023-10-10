@@ -11,6 +11,9 @@ public class RaycastInteraction : MonoBehaviour
     [SerializeField] CameraController cameraController;
     [SerializeField] private InputActionReference mousePosition;
     
+    [Header("ProjectUI")]
+    [SerializeField] private ProjectUI projectUI;
+    
     private Vector2 _senderPosition;
     private bool _isInteracting = false;
     void Start()
@@ -50,6 +53,12 @@ public class RaycastInteraction : MonoBehaviour
         {
             Debug.Log(hit.collider.gameObject.name);
             Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.red, 1f);
+            if (hit.collider.gameObject.CompareTag("Project"))
+            {
+                BuildingObject building = hit.collider.gameObject.GetComponent<BuildingObject>();
+                projectUI.SetInfo(building.ProjectData);
+                projectUI.ShowProjectUI();
+            }
         }
     }
 }
