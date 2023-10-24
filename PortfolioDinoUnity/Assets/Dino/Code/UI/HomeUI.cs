@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DINO
@@ -40,6 +36,19 @@ namespace DINO
 
         #endregion
 
+
+        #region public methods
+
+        public void OpenSocialMedia(string url)
+        {
+            Application.OpenURL(url);
+        }
+        public void EnableUICity(bool enable)
+        {
+            cityCanvasGroup.gameObject.SetActive(enable);
+        }
+
+        #endregion
         #region private methods
         private void HandleUIVisible()
         {

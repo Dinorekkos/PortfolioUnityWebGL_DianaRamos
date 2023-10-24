@@ -1,13 +1,22 @@
 using System;
+using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
 using DINO;
+using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
     #region Variables
+    [Header("Inputs")]
+    [SerializeField] private InputActionReference zoomPrimaryPosInputAction;
+    [SerializeField] private InputActionReference zoomSecondaryPosInputAction;
+    [SerializeField] private InputActionReference zoomSecondaryTouchInputAction;
+    
+    [Header("Camera")]
+    [SerializeField] private Camera mainCamera;
     
     [TabGroup("Camera Transitions")]
     [SerializeField] private Vector3 homePosition;
@@ -48,6 +57,21 @@ public class CameraController : MonoBehaviour
 
 
     #region Unity Methods
+
+    private void OnEnable()
+    {
+       zoomPrimaryPosInputAction.action.Enable();
+       zoomSecondaryPosInputAction.action.Enable();
+       zoomSecondaryTouchInputAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        zoomPrimaryPosInputAction.action.Disable();
+        zoomSecondaryPosInputAction.action.Disable();
+        zoomSecondaryTouchInputAction.action.Disable();
+    }
+
     private void Awake()
     {
         Instance = this;
@@ -55,12 +79,13 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        InitializeZoomInputs();
+        
         _xRotation = transform.rotation.eulerAngles.x;
         homePosition = transform.position;
         cameraState = CameraStates.Home;
         _initialRotation = transform.rotation.eulerAngles; 
         
-       
     }
 
     private void LateUpdate()
@@ -73,25 +98,11 @@ public class CameraController : MonoBehaviour
             cameraPosition += transform.up * (_cameraDelta.y * -movementSpeed);
             transform.position += cameraPosition * Time.deltaTime;
         }
-
-        if (_isCameraZooming)
-        {
-            Debug.Log("Zooming");
-        }
-
-        // if (_isCameraRotating)
-        // {
-        //     transform.Rotate(new Vector3(_xRotation,-_cameraDelta.x * rotationSpeed , 0.0f));
-        //     transform.rotation =  Quaternion.Euler(_xRotation,transform.rotation.eulerAngles.y,0.0f);
-        // }
         
     }
-
-    
     
     #endregion
 
-    
     
     #region Public Methods
     
@@ -132,25 +143,71 @@ public class CameraController : MonoBehaviour
             SnappedRotation();
         }
     }
-    public void OnZoom(InputAction.CallbackContext context)
-    {
-        _isCameraZooming = context.started || context.performed;
-        
-        // if (context.started)
-        // {
-        //     // transform.position += transform.forward * 0.5f;
-        // }
-        // else if (context.canceled)
-        // {
-        //     // transform.position -= transform.forward * 0.5f;
-        // }
-    }
+   
     
     
     #endregion
     
     #region Private Methods
 
+    private void InitializeZoomInputs()
+    {
+        if(!PortfolioInitializer.Instance.IsMobile) return;
+        
+        zoomPrimaryPosInputAction.action.performed += context =>
+        {
+            _primaryTouchPosition = context.ReadValue<Vector2>();
+        };
+        zoomSecondaryPosInputAction.action.performed += context =>
+        {
+            _secondaryTouchPosition = context.ReadValue<Vector2>();
+        };
+        
+        zoomSecondaryTouchInputAction.action.started += context =>
+        {
+            ZoomStart();
+        };
+        zoomSecondaryTouchInputAction.action.canceled += context =>
+        {
+            ZoomFinished();
+        };
+    }
+    private void ZoomStart()
+    {
+        _isCameraZooming = true;
+        StartCoroutine(DoZoom());
+    }
+
+    private void ZoomFinished()
+    {
+        _isCameraZooming = false;
+        StopCoroutine(DoZoom());
+    }
+
+    private IEnumerator DoZoom()
+    {
+        float previousDistance = 0f;
+        float distance = 0f;
+        zoom = 0.1f;
+
+        while (_isCameraZooming)
+        {
+            distance = Vector2.Distance(_primaryTouchPosition, _secondaryTouchPosition);
+            //Zoom Out
+            if (distance > previousDistance)
+            {
+                mainCamera.orthographicSize -= zoom;
+            }
+            //Zoom In
+            else if (distance < previousDistance)
+            {
+                mainCamera.orthographicSize += zoom;
+            }
+            previousDistance = distance;
+            yield return null;
+        }
+
+    }
     private void ResetCameraRotation()
     {
         transform.rotation = Quaternion.Euler(_initialRotation);
@@ -178,8 +235,9 @@ public class CameraController : MonoBehaviour
 
         return new Vector3(_xRotation, endValue, 0.0f);
     }
-    [Button(ButtonSizes.Medium)]
-    [GUIColor(0.6f,1,0.6f)]
+    
+    // [Button(ButtonSizes.Medium)]
+    // [GUIColor(0.6f,1,0.6f)]
     private void DoTransition(Vector3 targetPosition)
     {
         OnStartTransition?.Invoke();
