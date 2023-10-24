@@ -21,14 +21,5 @@ public class PortfolioInitializer : MonoBehaviour
         Instance = this;
         _isMobile = Application.isMobilePlatform;
     }
-
-    void Start()
-    {
-       
-    }
-
-  
-    
-    
     
 }

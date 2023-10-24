@@ -54,18 +54,17 @@ public class ProjectUI : MonoBehaviour
     void Start()
     {
         _isMobile = PortfolioInitializer.Instance.IsMobile;
-        _isMobile = true;
         canvasGroup.alpha = 0; 
         projectUIPhones.DOScale(Vector3.zero, 0);
         projectUIPC.DOScale(Vector3.zero,0);
         
         if (_isMobile)
         {
-            projectUIPhones.gameObject.SetActive(true);
+            projectUIPC.gameObject.SetActive(false);
         }
         else
         {
-            projectUIPC.gameObject.SetActive(false);
+            projectUIPhones.gameObject.SetActive(false);
         }
     }
 

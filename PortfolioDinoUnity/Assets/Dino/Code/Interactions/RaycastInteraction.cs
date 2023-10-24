@@ -16,16 +16,6 @@ public class RaycastInteraction : MonoBehaviour
     
     private Vector2 _senderPosition;
     private bool _isInteracting = false;
-    void Start()
-    {
-        // mousePosition.action.Ini
-    }
-
-    void Update()
-    {
-        
-    }
-
 
     public void OnInteraction(InputAction.CallbackContext context)
     {

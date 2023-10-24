@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8984ab5-c08b-4490-9d0d-5f05f5193560" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/PortfolioInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/PortfolioInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/UI/HomeUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/UI/HomeUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/UI/ProjectUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/UI/ProjectUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/City.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/City.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/ScriptableObjects/MDF_Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/ScriptableObjects/MDF_Data.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersRuleset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersRuleset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +132,7 @@
       <workItem from="1697086298798" duration="1149000" />
       <workItem from="1697505801455" duration="617000" />
       <workItem from="1698098661408" duration="5515000" />
-      <workItem from="1698175108424" duration="3169000" />
+      <workItem from="1698175108424" duration="4608000" />
     </task>
     <servers />
   </component>

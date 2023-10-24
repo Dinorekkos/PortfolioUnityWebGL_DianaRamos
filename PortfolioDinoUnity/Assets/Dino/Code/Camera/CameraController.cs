@@ -86,8 +86,6 @@ public class CameraController : MonoBehaviour
         cameraState = CameraStates.Home;
         _initialRotation = transform.rotation.eulerAngles; 
         
-        
-       
     }
 
     private void LateUpdate()
@@ -100,21 +98,11 @@ public class CameraController : MonoBehaviour
             cameraPosition += transform.up * (_cameraDelta.y * -movementSpeed);
             transform.position += cameraPosition * Time.deltaTime;
         }
-
-
-        // if (_isCameraRotating)
-        // {
-        //     transform.Rotate(new Vector3(_xRotation,-_cameraDelta.x * rotationSpeed , 0.0f));
-        //     transform.rotation =  Quaternion.Euler(_xRotation,transform.rotation.eulerAngles.y,0.0f);
-        // }
         
     }
-
-    
     
     #endregion
 
-    
     
     #region Public Methods
     
