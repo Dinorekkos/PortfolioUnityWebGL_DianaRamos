@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +15,16 @@ public class PortfolioInitializer : MonoBehaviour
 
 
     private bool _isMobile;
-    
-    
-    void Start()
+
+    private void Awake()
     {
         Instance = this;
         _isMobile = Application.isMobilePlatform;
+    }
+
+    void Start()
+    {
+       
     }
 
   

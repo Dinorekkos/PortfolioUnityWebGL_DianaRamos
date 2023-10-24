@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Zoom",
-                    "type": "PassThrough",
-                    "id": "1c63da27-fa1e-4136-86ba-669d36600157",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "21c11326-93b3-422f-8346-5e99ee98a91e",
@@ -118,17 +109,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b14ffbe8-7daf-48ba-80ae-8dfeb415f180",
-                    "path": "<Touchscreen>/touch*/Press",
-                    "interactions": "MultiTap",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8439fb9c-6bfe-49e9-aa52-f9cd82bb9228",
                     "path": "<Touchscreen>/Press",
                     "interactions": "",
@@ -168,6 +148,74 @@
                     "processors": "",
                     "groups": "",
                     "action": "MousePos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Zoom Actions",
+            "id": "dc9db9dc-49d5-4ace-9f21-afc0ee9a0748",
+            "actions": [
+                {
+                    "name": "PrimaryFingerPos",
+                    "type": "Value",
+                    "id": "4ff27662-3ad6-4919-9744-bd7d2a11732d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SecondaryFingerPos",
+                    "type": "Value",
+                    "id": "e2c4885a-13bb-458d-abcc-114d1aeffc5f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SecondaryTouch",
+                    "type": "Button",
+                    "id": "4de40782-c76e-42b0-8a8d-405c5dc91386",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cd0fbfe3-1700-422c-a799-08a14f1c6c04",
+                    "path": "<Touchscreen>/touch0/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryFingerPos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62d3e22b-0d72-42a8-addb-223d27efaf40",
+                    "path": "<Touchscreen>/touch1/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryTouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a9d3a7c-d089-417a-805b-ebadc373a328",
+                    "path": "<Touchscreen>/touch1/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryFingerPos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -40,6 +40,19 @@ namespace DINO
 
         #endregion
 
+
+        #region public methods
+
+        public void OpenSocialMedia(string url)
+        {
+            Application.OpenURL(url);
+        }
+        public void EnableUICity(bool enable)
+        {
+            cityCanvasGroup.gameObject.SetActive(enable);
+        }
+
+        #endregion
         #region private methods
         private void HandleUIVisible()
         {
