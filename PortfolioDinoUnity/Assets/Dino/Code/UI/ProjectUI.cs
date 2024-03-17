@@ -84,7 +84,8 @@ public class ProjectUI : MonoBehaviour
         linkText_mobile.text = projectData.Link;
         linkButton_mobile.onClick.AddListener(() =>
         {
-            Application.OpenURL(projectData.Link);
+            // Application.OpenURL(projectData.Link);
+            Nfynt.NPlugin.OpenURL(projectData.Link);
         });
         
         //PC canvas
@@ -96,7 +97,8 @@ public class ProjectUI : MonoBehaviour
         linkText_pc.text = projectData.Link;
         linkButton_pc.onClick.AddListener(() =>
         {
-            Application.OpenURL(projectData.Link);
+            // Application.OpenURL(projectData.Link);
+            Nfynt.NPlugin.OpenURL(projectData.Link);
         });
     }
     
