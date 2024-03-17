@@ -46,6 +46,8 @@ public class RaycastInteraction : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Project"))
             {
                 BuildingObject building = hit.collider.gameObject.GetComponent<BuildingObject>();
+                
+                if(CameraController.Instance.IsCameraZooming || CameraController.Instance.IsCameraZooming) return;
                 projectUI.SetInfo(building.ProjectData);
                 projectUI.ShowProjectUI();
             }

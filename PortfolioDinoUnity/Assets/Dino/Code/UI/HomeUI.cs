@@ -41,7 +41,8 @@ namespace DINO
 
         public void OpenSocialMedia(string url)
         {
-            Application.OpenURL(url);
+            // Application.OpenURL(url);
+            Nfynt.NPlugin.OpenURL(url);
         }
         public void EnableUICity(bool enable)
         {

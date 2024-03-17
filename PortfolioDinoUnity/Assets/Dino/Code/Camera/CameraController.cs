@@ -52,9 +52,17 @@ public class CameraController : MonoBehaviour
     private Vector2 _secondaryTouchPosition = Vector2.zero;
 
     private float _xRotation;
-
+    
     #endregion
 
+    #region Public Variables
+
+    public bool IsCameraRotating => _isCameraRotating;
+    public bool IsCameraMoving => _isCameraMoving;
+    public bool IsCameraZooming => _isCameraZooming;
+    
+
+    #endregion
 
     #region Unity Methods
 

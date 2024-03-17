@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e8984ab5-c08b-4490-9d0d-5f05f5193560" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/City.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/City.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/boot.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Search.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Search.settings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,20 +53,20 @@
     "Discover.Launch.Via.Unity": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "0.1",
+    "git-widget-placeholder": "v0.2",
     "settings.editor.selected.configurable": "CodeLensConfigurable"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\diana\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\diana\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\diana\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\diana\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
       "C:\\Users\\diana\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2021.3.15f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2022.3.20f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Proyectos\Web Projects\PortfoliUnity\PortfolioDinoUnity&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Web Projects\PortfoliUnity\PortfolioDinoUnity" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -64,7 +74,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2021.3.15f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2022.3.20f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Proyectos\Web Projects\PortfoliUnity\UnityProject\PortfolioUnityWebGL_2023_DianaRamos\PortfolioDinoUnity&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Web Projects\PortfoliUnity\UnityProject\PortfolioUnityWebGL_2023_DianaRamos\PortfolioDinoUnity" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -132,7 +142,10 @@
       <workItem from="1697086298798" duration="1149000" />
       <workItem from="1697505801455" duration="617000" />
       <workItem from="1698098661408" duration="5515000" />
-      <workItem from="1698175108424" duration="4608000" />
+      <workItem from="1698175108424" duration="6418000" />
+      <workItem from="1699141827590" duration="1401000" />
+      <workItem from="1708311033053" duration="646000" />
+      <workItem from="1710709744610" duration="2985000" />
     </task>
     <servers />
   </component>
@@ -140,24 +153,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/DINO/Code/Camera/CameraController.cs</url>
-          <line>165</line>
-          <properties documentPath="D:\Proyectos\Web Projects\PortfoliUnity\UnityProject\PortfolioUnityWebGL_2023_DianaRamos\PortfolioDinoUnity\Assets\DINO\Code\Camera\CameraController.cs" initialLine="163" containingFunctionPresentation="Method 'InitializeInputs'">
-            <startOffsets>
-              <option value="4357" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4358" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
