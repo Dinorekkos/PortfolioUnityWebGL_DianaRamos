@@ -1642,7 +1642,7 @@ RectTransform:
   - {fileID: 2085623577}
   - {fileID: 1068973631}
   m_Father: {fileID: 331128121}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3034,6 +3034,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1230400630}
   - {fileID: 1084678900}
   - {fileID: 1039705347}
   - {fileID: 188645296}
@@ -8490,7 +8491,7 @@ RectTransform:
   m_Children:
   - {fileID: 243923831}
   m_Father: {fileID: 331128121}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9101,7 +9102,7 @@ RectTransform:
   - {fileID: 318404755}
   - {fileID: 380469897}
   m_Father: {fileID: 331128121}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9929,6 +9930,145 @@ Transform:
   m_Father: {fileID: 272890959}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1230400629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230400630}
+  - component: {fileID: 1230400632}
+  - component: {fileID: 1230400631}
+  m_Layer: 0
+  m_Name: DinoInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1230400630
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230400629}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 331128121}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 108, y: 105}
+  m_SizeDelta: {x: 129.3615, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1230400631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230400629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Diana Ramos Garcia
+
+    dianaramosgd@gmail.com
+
+    +52 5547923297'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fb4ae03a1ea7a79468fe7b027f81f1ae, type: 2}
+  m_sharedMaterial: {fileID: -7660503296257389340, guid: fb4ae03a1ea7a79468fe7b027f81f1ae, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 16
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -65.28667, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1230400632
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230400629}
+  m_CullTransparentMesh: 1
 --- !u!1 &1251419889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1922167373877962, guid: 8993fb223e4ebc248821762409f81b6e, type: 3}
@@ -10851,8 +10991,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is a description of the game perse in this lione you shoul gave a
-    description for the project '
+  m_text: Cute farm mobile game. Build your farm, decorate and farm your plots. 
+    Indie mexican mobile game with currently 8.5 million downloads.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb4ae03a1ea7a79468fe7b027f81f1ae, type: 2}
   m_sharedMaterial: {fileID: -7660503296257389340, guid: fb4ae03a1ea7a79468fe7b027f81f1ae, type: 2}
@@ -10915,7 +11055,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -137.16127, w: -32.491}
+  m_margin: {x: 0, y: 0, z: -137.16127, w: -4.5929966}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12954,6 +13094,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.164789, y: 2.5246696, z: 1.3029993}
   m_Center: {x: 0.008755302, y: 1.2623348, z: -0.2668701}
+--- !u!114 &1747607784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747607778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56a3e22a2087f340b7693398f371d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectData: {fileID: 11400000, guid: a05b75428210b3241a9504208aee879c, type: 2}
 --- !u!1001 &1750627638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15609,7 +15762,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2039828500}
   - component: {fileID: 2039828499}
-  - component: {fileID: 2039828501}
   m_Layer: 0
   m_Name: Pin_5
   m_TagString: Project
@@ -15651,19 +15803,6 @@ Transform:
   m_Father: {fileID: 445624922}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2039828501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039828498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c56a3e22a2087f340b7693398f371d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectData: {fileID: 11400000, guid: a05b75428210b3241a9504208aee879c, type: 2}
 --- !u!1 &2050989219
 GameObject:
   m_ObjectHideFlags: 0
@@ -16826,8 +16965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77.99, y: -200.11798}
-  m_SizeDelta: {x: 164.78, y: 50}
+  m_AnchoredPosition: {x: -77.99, y: -223.33383}
+  m_SizeDelta: {x: 164.78, y: 35.3852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133197854
 MonoBehaviour:
@@ -16896,7 +17035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Programmer/Developer
+  m_text: https://play.google.com/store/apps/details?id=com.HyperBeardGames.MyDearFarm&hl=en&gl=US
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb4ae03a1ea7a79468fe7b027f81f1ae, type: 2}
   m_sharedMaterial: {fileID: -7660503296257389340, guid: fb4ae03a1ea7a79468fe7b027f81f1ae, type: 2}
@@ -16959,7 +17098,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.351696, y: 0, z: -179.24515, w: 0}
+  m_margin: {x: 1.351696, y: 0, z: -170.52698, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
