@@ -22,14 +22,14 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 homePosition;
     [TabGroup("Camera Transitions")]
     [SerializeField] private Vector3 cityPosition;
+    [TabGroup("Camera Transitions")]
+    [SerializeField] private float transitionSpeed = 1f;
+    
 
     [TabGroup("Camera Settings")]
     [SerializeField] private float zoom = 1f; 
     [TabGroup("Camera Settings")]
     [SerializeField] private float movementSpeed = 0.5f;
-    [TabGroup("Camera Settings")]
-    [SerializeField] private float transitionSpeed = 1f;
-    
     
     [TabGroup("Camera States")]
     [SerializeField] private CameraStates cameraState;
@@ -52,6 +52,8 @@ public class CameraController : MonoBehaviour
     private Vector2 _secondaryTouchPosition = Vector2.zero;
 
     private float _xRotation;
+    
+    private bool _cameraIsTransitioning;
     
     #endregion
 
@@ -99,7 +101,9 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         if (cameraState != CameraStates.City) return;
+        if(_cameraIsTransitioning) return;
 
+        //Drag Camera
         if (_isCameraMoving)
         {
             Vector3 cameraPosition = transform.right * (_cameraDelta.x * -movementSpeed);
@@ -129,6 +133,8 @@ public class CameraController : MonoBehaviour
         
         
     }
+
+    #region Input
     public void OnLook(InputAction.CallbackContext context)
     {
         _cameraDelta = context.action.ReadValue<Vector2>();
@@ -152,6 +158,7 @@ public class CameraController : MonoBehaviour
         }
     }
    
+    #endregion
     
     
     #endregion
@@ -185,13 +192,11 @@ public class CameraController : MonoBehaviour
         _isCameraZooming = true;
         StartCoroutine(DoZoom());
     }
-
     private void ZoomFinished()
     {
         _isCameraZooming = false;
         StopCoroutine(DoZoom());
     }
-
     private IEnumerator DoZoom()
     {
         float previousDistance = 0f;
@@ -244,19 +249,27 @@ public class CameraController : MonoBehaviour
         return new Vector3(_xRotation, endValue, 0.0f);
     }
     
-    // [Button(ButtonSizes.Medium)]
-    // [GUIColor(0.6f,1,0.6f)]
     private void DoTransition(Vector3 targetPosition)
     {
+        _cameraIsTransitioning = true;
         OnStartTransition?.Invoke();
-        transform.DOMove(targetPosition, transitionSpeed).SetEase(Ease.OutQuad).OnComplete(() =>
-        {
-            OnCompleteTransition?.Invoke();
-
+        transform.DOMove(targetPosition, transitionSpeed / 2).SetEase(Ease.InOutCubic).OnComplete(() =>
+        { 
+            OnCompleteTransition?.Invoke(); 
+            _cameraIsTransitioning = false; 
+            Debug.Log("Transition Completed".SetColor(ColorString.Purple));
         });
-
     }
-   
+
+    #endregion
+
+    #region Test
+
+    [Button]
+    private void TransitionTest()
+    {
+        ChangeCameraTo(CameraStates.City);
+    }
     
     #endregion
 }
