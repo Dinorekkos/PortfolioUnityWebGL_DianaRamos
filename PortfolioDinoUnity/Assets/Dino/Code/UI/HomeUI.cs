@@ -12,11 +12,7 @@ namespace DINO
         [SerializeField] private CanvasGroup homeCanvasGroup;
         [SerializeField] private CanvasGroup cityCanvasGroup;
         #endregion
-
         #region Unity Methods
-
-        
-
         void Start()
         {
             _homeButton.image.DOFade(0, 0);
@@ -24,19 +20,20 @@ namespace DINO
             _cityButton.onClick.AddListener(() =>
             {
                 HomeController.Instance.GoToCity();
+                AudioManager.Instance.PlayAudio("Transition1");
                 HandleUIVisible();
             });
             _homeButton.onClick.AddListener(() =>
             {
                 HomeController.Instance.GoToHome();
+                AudioManager.Instance.PlayAudio("Transition2");
+
                 HandleUIVisible();
             });
             
         }
 
         #endregion
-
-
         #region public methods
 
         public void OpenSocialMedia(string url)

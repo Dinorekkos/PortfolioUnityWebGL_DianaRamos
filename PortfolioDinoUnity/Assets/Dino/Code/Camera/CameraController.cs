@@ -257,7 +257,6 @@ public class CameraController : MonoBehaviour
         { 
             OnCompleteTransition?.Invoke(); 
             _cameraIsTransitioning = false; 
-            Debug.Log("Transition Completed".SetColor(ColorString.Purple));
         });
     }
 
