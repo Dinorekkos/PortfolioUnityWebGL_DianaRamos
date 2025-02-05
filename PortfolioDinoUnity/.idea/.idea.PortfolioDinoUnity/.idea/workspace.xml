@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e8984ab5-c08b-4490-9d0d-5f05f5193560" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Animations/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Animations/Character.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Models/Kenney/Models/FBX format/character-male-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Models/Kenney/Models/FBX format/character-male-c.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +164,8 @@
       <workItem from="1729523022049" duration="989000" />
       <workItem from="1738108644525" duration="2162000" />
       <workItem from="1738110836541" duration="677000" />
+      <workItem from="1738713234400" duration="1700000" />
+      <workItem from="1738720110329" duration="3108000" />
     </task>
     <servers />
   </component>

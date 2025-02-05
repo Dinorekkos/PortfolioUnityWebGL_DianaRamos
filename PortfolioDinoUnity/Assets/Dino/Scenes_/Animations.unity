@@ -328,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 632999038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.493, z: 3.91}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -438,6 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204270444}
   - component: {fileID: 1204270445}
+  - component: {fileID: 1204270446}
   m_Layer: 0
   m_Name: Char - Officer
   m_TagString: Untagged
@@ -454,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 1204270443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -475,9 +476,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterState: 0
   animatorHandler: {fileID: 1275941100}
-  duration: 0
-  path:
-  - {x: 0, y: 0, z: 3.91}
+  targetsPositions:
+  - {fileID: 1204270444}
+  - {fileID: 632999042}
+  speed: 2.5
+  rb: {fileID: 1204270446}
+--- !u!54 &1204270446
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204270443}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1001 &1275941098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -488,15 +518,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b361fa489e07de14caf228f3a7e13ffb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b361fa489e07de14caf228f3a7e13ffb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.028
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b361fa489e07de14caf228f3a7e13ffb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b361fa489e07de14caf228f3a7e13ffb, type: 3}
       propertyPath: m_LocalRotation.w
