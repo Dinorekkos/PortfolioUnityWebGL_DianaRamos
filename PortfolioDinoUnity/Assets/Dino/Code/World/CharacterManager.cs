@@ -13,7 +13,7 @@ public class CharacterManager : MonoBehaviour
     [TabGroup("States")] [SerializeField] private float idleTime = 3f;
     
     [TabGroup("Movement")] [SerializeField] private Transform[] targetsPositions;
-    [TabGroup("Movement")] [SerializeField] private int _currentTargetIndex = 0;
+    // [TabGroup("Movement")] [SerializeField] private int _currentTargetIndex = 0;
     
     [TabGroup("Physics")] [SerializeField] private float speed = 1f;
     [TabGroup("Physics")] [SerializeField] private Rigidbody rb;
@@ -21,58 +21,63 @@ public class CharacterManager : MonoBehaviour
     private bool _isMoving = false;
     private bool _characterIsRotating = false;
     private bool _characterReachedTarget = false;
+    private Queue<Transform> _targetsQueue = new Queue<Transform>();
+    private Transform _currentTarget;
+    
     private float _idleCounter = 0f;
+    private float _rotationSpeed = 3f;
+    
 
     #region Unity Methods
     void Start()
     {
+        PopulateQueue();
         //Start player walking to the first target
-        SetPlayerInitialPosition();
-        ChangeState(CharacterStates.Walking);
+        ChangeState(CharacterStates.Idle);
     }
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, targetsPositions[_currentTargetIndex].position) < 0.1f)
-        {
-            _isMoving = false;
-            ChangeState(CharacterStates.Idle);
-            UpdateCurrentTargetIndex();
-        }
-        
-        if (characterState == CharacterStates.Idle)
-        {
-            _idleCounter -= Time.deltaTime;
-            if (_idleCounter <= 0)
-            {
-                RotateCharacter();
-                ChangeState(CharacterStates.Walking);
-            }
-        }
-        
         if (_isMoving) MoveCharacter();
+        
+        
+       
         
     }
     #endregion
 
-    private void UpdateCurrentTargetIndex()
+    private void PopulateQueue()
     {
-        _currentTargetIndex++;
-        if (_currentTargetIndex >= targetsPositions.Length)
+        foreach (var target in targetsPositions)
         {
-            _currentTargetIndex = 0;
+            _targetsQueue.Enqueue(target);
         }
     }
-    private void SetPlayerInitialPosition() => transform.position = targetsPositions[0].position;
+    
+    private Transform GetNextTarget()
+    {
+        return _targetsQueue.Dequeue();
+    }
+    private void UpdateCurrentTarget()
+    {
+        if (_targetsQueue.Count == 0)
+        {
+            _targetsQueue.Clear();
+            PopulateQueue();
+        }
+        _currentTarget = GetNextTarget();
+    }
     private void MoveCharacter()
     {
-        rb.MovePosition(Vector3.MoveTowards(transform.position, targetsPositions[_currentTargetIndex].position, speed * Time.deltaTime));
+        rb.MovePosition(Vector3.MoveTowards(transform.position, _currentTarget.position, speed * Time.deltaTime));
     }
     private void RotateCharacter()
     {
-        Vector3 direction = (targetsPositions[_currentTargetIndex].position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        // Vector3 direction = (_currentTarget.position - transform.position).normalized;
+        // Quaternion lookRotation = Quaternion.LookRotation(direction);
+        // transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
+        
+        transform.DORotate( _currentTarget.position - transform.position, _rotationSpeed);
     }
     private void ChangeState(CharacterStates state)
     {
@@ -82,6 +87,7 @@ public class CharacterManager : MonoBehaviour
             case CharacterStates.Idle:
                 _idleCounter = idleTime;
                 animatorHandler.PlayAnimation("idle");
+                StartCoroutine("IdleCounter");
                 break;
             case CharacterStates.Walking:
                 _isMoving = true;
@@ -90,6 +96,17 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    private IEnumerator IdleCounter()
+    {
+        while (_idleCounter > 0)
+        {
+            _idleCounter -= Time.deltaTime;
+            yield return null;
+        }
+        UpdateCurrentTarget();
+        ChangeState(CharacterStates.Walking);
+    }
+    
 
 
     #region Testing
