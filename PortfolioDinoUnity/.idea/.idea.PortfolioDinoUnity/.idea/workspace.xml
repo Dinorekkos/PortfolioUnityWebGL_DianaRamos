@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8984ab5-c08b-4490-9d0d-5f05f5193560" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Animations/Character.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Animations/Character.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Models/Kenney/Models/FBX format/character-male-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Models/Kenney/Models/FBX format/character-male-c.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +32,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ddb5fa70dfe40d2818192400111b9ec2aa00/a9/60059b13/TweenSettingsExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dfc17dda9cbb441b8dc74d81535b7d4f10200/74/acbd1747/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/Datas/ProjectData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/ButtonAudio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/ButtonAudio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/ButtonOptimizedAnim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/CityUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/HomeUI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -165,7 +160,8 @@
       <workItem from="1738108644525" duration="2162000" />
       <workItem from="1738110836541" duration="677000" />
       <workItem from="1738713234400" duration="1700000" />
-      <workItem from="1738720110329" duration="3108000" />
+      <workItem from="1738720110329" duration="3707000" />
+      <workItem from="1738861038703" duration="9000" />
     </task>
     <servers />
   </component>
