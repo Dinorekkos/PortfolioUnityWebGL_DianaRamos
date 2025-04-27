@@ -19,3 +19,7 @@ MonoBehaviour:
   job: Developer Internship
   image: {fileID: 21300000, guid: d5abad5e4e10aa44197194f3ea1292f4, type: 3}
   link: https://pinkbeargames.com
+  screenShots:
+  - {fileID: 21300000, guid: 3c0bd6a24d183fb47907be43489bd606, type: 3}
+  - {fileID: 1488944823, guid: d5410b9ba38cfbb49b34b44a9625c7bf, type: 3}
+  - {fileID: 895960723, guid: de9e8e5222cb4944695abb9790a5ea79, type: 3}
