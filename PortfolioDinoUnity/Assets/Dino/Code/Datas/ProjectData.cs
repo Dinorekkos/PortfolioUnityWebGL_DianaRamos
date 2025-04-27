@@ -13,12 +13,13 @@ namespace DINO
         [SerializeField] private string job;
         [SerializeField] private Sprite image;
         [SerializeField] private string link;
-        
+        [SerializeField] private Sprite[] screenShots;
         public string ProjectName => projectName;
         public string StudioName => studioName;
         public string Description => description;
         public Sprite Image => image;
         public string Link => link;
         public string Job => job;
+        public Sprite[] ScreenShots => screenShots;
     }
 }

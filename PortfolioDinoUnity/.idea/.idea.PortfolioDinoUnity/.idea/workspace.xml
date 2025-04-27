@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8984ab5-c08b-4490-9d0d-5f05f5193560" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterMovement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Font/Righteous-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Font/Righteous-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Font/Urbanist-Light SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Font/Urbanist-Light SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/City.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/City.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/ScriptableObjects/MDF_Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/ScriptableObjects/MDF_Data.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +81,9 @@
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Web Projects\PortfoliUnity\PortfolioDinoUnity" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
@@ -88,6 +92,9 @@
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Web Projects\PortfoliUnity\UnityProject\PortfolioUnityWebGL_2023_DianaRamos\PortfolioDinoUnity" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
@@ -96,6 +103,9 @@
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Web Projects\PortfoliUnity\PortfolioDinoUnity" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="PTY_MODE" value="Auto" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -109,6 +119,7 @@
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -122,6 +133,7 @@
       <option name="selectedOptions">
         <list />
       </option>
+      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -170,6 +182,7 @@
       <workItem from="1740615160660" duration="2733000" />
       <workItem from="1741113300646" duration="3516000" />
       <workItem from="1741898288625" duration="640000" />
+      <workItem from="1745786762895" duration="16000" />
     </task>
     <servers />
   </component>
@@ -186,5 +199,23 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

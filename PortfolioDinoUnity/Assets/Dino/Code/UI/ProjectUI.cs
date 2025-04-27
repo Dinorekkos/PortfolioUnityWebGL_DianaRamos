@@ -25,6 +25,7 @@ public class ProjectUI : MonoBehaviour
     [SerializeField] private Image image_pc;
     [SerializeField] private Button linkButton_pc;
     [SerializeField] private TextMeshProUGUI linkText_pc;
+    [SerializeField] private Image[] screenShots_pc;
     
     [Header("Mobile")]
     [SerializeField] private TextMeshProUGUI projectName_mobile;
@@ -75,6 +76,12 @@ public class ProjectUI : MonoBehaviour
         if(_isShowing) return;
         projectData = data;
         
+        SetMobileInfo();
+        SetPcInfo();
+    }
+
+    private void SetMobileInfo()
+    {
         //Mobile canvas
         projectName_mobile.text = projectData.ProjectName;
         studioName_mobile.text = projectData.StudioName;
@@ -87,7 +94,10 @@ public class ProjectUI : MonoBehaviour
             // Application.OpenURL(projectData.Link);
             Nfynt.NPlugin.OpenURL(projectData.Link);
         });
-        
+    }
+
+    private void SetPcInfo()
+    {
         //PC canvas
         projectName_pc.text = projectData.ProjectName;
         studioName_pc.text = projectData.StudioName;
@@ -100,8 +110,21 @@ public class ProjectUI : MonoBehaviour
             // Application.OpenURL(projectData.Link);
             Nfynt.NPlugin.OpenURL(projectData.Link);
         });
+        
+        for (int i = 0; i < screenShots_pc.Length; i++)
+        {
+            if (i < projectData.ScreenShots.Length)
+            {
+                screenShots_pc[i].sprite = projectData.ScreenShots[i];
+            }
+            else
+            {
+                screenShots_pc[i].gameObject.SetActive(false);
+            }
+        }
     }
-    
+
+
     public void ShowProjectUI()
     {
         if (_isShowing) return;
