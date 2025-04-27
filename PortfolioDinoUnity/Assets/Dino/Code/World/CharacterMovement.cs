@@ -6,25 +6,21 @@ using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     [TabGroup("States")] [SerializeField] private CharacterStates characterState;
     [TabGroup("States")] [SerializeField] private AnimatorHandler animatorHandler;
-    [TabGroup("States")] [SerializeField] private float idleTime = 3f;
+    [TabGroup("States")] [SerializeField] private float idleTime = 2f;
     
     [TabGroup("Movement")] [SerializeField] private Transform[] targetsPositions;
-    // [TabGroup("Movement")] [SerializeField] private int _currentTargetIndex = 0;
     
-    [TabGroup("Physics")] [SerializeField] private float speed = 1f;
+    [TabGroup("Physics")] [SerializeField] private float speed = 1.5f;
     [TabGroup("Physics")] [SerializeField] private Rigidbody rb;
     
-    private bool _isMoving = false;
-    private bool _characterIsRotating = false;
     private bool _characterReachedTarget = false;
     private Queue<Transform> _targetsQueue = new Queue<Transform>();
     private Transform _currentTarget;
     
-    private float _idleCounter = 0f;
     private float _rotationSpeed = 3f;
     
 
@@ -32,18 +28,32 @@ public class CharacterManager : MonoBehaviour
     void Start()
     {
         PopulateQueue();
-        //Start player walking to the first target
         ChangeState(CharacterStates.Idle);
     }
 
     private void Update()
     {
-        if (_isMoving) MoveCharacter();
-        
-        
-       
-        
+        if (!_characterReachedTarget)
+        {
+            CheckDistance();
+        }
     }
+
+    private void CheckDistance()
+    {
+        if (_currentTarget == null) return;
+        if (Vector3.Distance(transform.position, _currentTarget.position) > 0.1f)
+        { 
+            MoveCharacter();
+        }
+        else
+        {
+            // Debug.Log("Character reached target");
+            _characterReachedTarget = true;
+            
+        }
+    }
+
     #endregion
 
     private void PopulateQueue()
@@ -66,9 +76,11 @@ public class CharacterManager : MonoBehaviour
             PopulateQueue();
         }
         _currentTarget = GetNextTarget();
+        Debug.Log("Current Target = ".SetColor(ColorString.Purple) + _currentTarget.gameObject.name);
     }
     private void MoveCharacter()
     {
+        Debug.Log("Character is moving");
         rb.MovePosition(Vector3.MoveTowards(transform.position, _currentTarget.position, speed * Time.deltaTime));
     }
     private void RotateCharacter()
@@ -76,34 +88,34 @@ public class CharacterManager : MonoBehaviour
         // Vector3 direction = (_currentTarget.position - transform.position).normalized;
         // Quaternion lookRotation = Quaternion.LookRotation(direction);
         // transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
-        
+        if(_currentTarget == null) return;
+        Debug.Log("Character is rotating".SetColor(ColorString.Blue));
         transform.DORotate( _currentTarget.position - transform.position, _rotationSpeed);
     }
     private void ChangeState(CharacterStates state)
     {
+        if (characterState == state) return;
         characterState = state;
+        Debug.Log("State = ".SetColor(ColorString.Orange) + characterState);
         switch (state)
         {
             case CharacterStates.Idle:
-                _idleCounter = idleTime;
                 animatorHandler.PlayAnimation("idle");
                 StartCoroutine("IdleCounter");
                 break;
             case CharacterStates.Walking:
-                _isMoving = true;
+                UpdateCurrentTarget(); 
+                RotateCharacter();
+                MoveCharacter(); 
                 animatorHandler.PlayAnimation("walk");
                 break;
         }
+        
     }
 
     private IEnumerator IdleCounter()
     {
-        while (_idleCounter > 0)
-        {
-            _idleCounter -= Time.deltaTime;
-            yield return null;
-        }
-        UpdateCurrentTarget();
+        yield return new WaitForSeconds(idleTime);
         ChangeState(CharacterStates.Walking);
     }
     

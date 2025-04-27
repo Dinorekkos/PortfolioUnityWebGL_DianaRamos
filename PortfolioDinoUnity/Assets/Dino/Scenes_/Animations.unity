@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 337711831}
   - component: {fileID: 337711830}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Pos_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 632999041}
   - component: {fileID: 632999040}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Pos_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,7 +337,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632999038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -516,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 1204270443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.91}
+  m_LocalPosition: {x: 0, y: 0, z: -3.717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -537,11 +537,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterState: 0
   animatorHandler: {fileID: 1275941100}
-  idleTime: 3
+  idleTime: 2
   targetsPositions:
   - {fileID: 337711832}
   - {fileID: 632999042}
-  speed: 2.5
+  speed: 4
   rb: {fileID: 1204270446}
 --- !u!54 &1204270446
 Rigidbody:

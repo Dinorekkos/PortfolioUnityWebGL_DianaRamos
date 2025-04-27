@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e8984ab5-c08b-4490-9d0d-5f05f5193560" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PortfolioDinoUnity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/World/CharacterMovement.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes_/Animations.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/CityUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/UI/HomeUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/World/CarsMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/World/CharacterManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Dino/Code/World/CharacterMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -162,6 +167,9 @@
       <workItem from="1738713234400" duration="1700000" />
       <workItem from="1738720110329" duration="3707000" />
       <workItem from="1738861038703" duration="9000" />
+      <workItem from="1740615160660" duration="2733000" />
+      <workItem from="1741113300646" duration="3516000" />
+      <workItem from="1741898288625" duration="640000" />
     </task>
     <servers />
   </component>
