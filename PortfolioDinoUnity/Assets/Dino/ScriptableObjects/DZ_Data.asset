@@ -18,4 +18,10 @@ MonoBehaviour:
     Gamergy 2023, EGS 2022, La Mole 2023.
   job: Game Developer/Interactions VR
   image: {fileID: 21300000, guid: acffa6f1cd1df4943afc7f1bcf23b53d, type: 3}
+  aspectRatioFitter: 0
+  aspectMode: 0
   link: https://sralmeja.itch.io/dungeon-z
+  screenShots:
+  - {fileID: 21300000, guid: 0cae38165df8b1b4197f830e5c7491cf, type: 3}
+  - {fileID: 21300000, guid: 44cb529efbf1cc1438e2fc88aa0c1076, type: 3}
+  - {fileID: 21300000, guid: 085b4b550653bd64da1a35c16550bb9c, type: 3}

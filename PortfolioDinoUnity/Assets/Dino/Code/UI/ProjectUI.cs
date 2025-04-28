@@ -52,6 +52,9 @@ public class ProjectUI : MonoBehaviour
     
     bool _isMobile = false;
     bool _isShowing = false;
+    private AspectRatioFitter _aspectRatioFitterPc;
+    private AspectRatioFitter.AspectMode _defaultMode;
+    private float _defaultAspectRatio;
     void Start()
     {
         _isMobile = PortfolioInitializer.Instance.IsMobile;
@@ -66,9 +69,21 @@ public class ProjectUI : MonoBehaviour
         else
         {
             projectUIPhones.gameObject.SetActive(false);
+            _aspectRatioFitterPc = image_pc.GetComponent<AspectRatioFitter>();
+            _defaultMode = _aspectRatioFitterPc.aspectMode;
+            _defaultAspectRatio = _aspectRatioFitterPc.aspectRatio;
+            
         }
+        
+        linkButton_mobile.onClick.AddListener(OpenLink);
+        linkButton_pc.onClick.AddListener(OpenLink);
     }
 
+    private void OnDestroy()
+    {
+        linkButton_mobile.onClick.RemoveListener(OpenLink);
+        linkButton_pc.onClick.RemoveListener(OpenLink);
+    }
     
     
     public void SetInfo(ProjectData data)
@@ -89,11 +104,6 @@ public class ProjectUI : MonoBehaviour
         job_mobile.text = projectData.Job;
         image_mobile.sprite = projectData.Image;
         linkText_mobile.text = projectData.Link;
-        linkButton_mobile.onClick.AddListener(() =>
-        {
-            // Application.OpenURL(projectData.Link);
-            Nfynt.NPlugin.OpenURL(projectData.Link);
-        });
     }
 
     private void SetPcInfo()
@@ -105,11 +115,6 @@ public class ProjectUI : MonoBehaviour
         job_pc.text = projectData.Job;
         image_pc.sprite = projectData.Image;
         linkText_pc.text = projectData.Link;
-        linkButton_pc.onClick.AddListener(() =>
-        {
-            // Application.OpenURL(projectData.Link);
-            Nfynt.NPlugin.OpenURL(projectData.Link);
-        });
         
         for (int i = 0; i < screenShots_pc.Length; i++)
         {
@@ -122,6 +127,17 @@ public class ProjectUI : MonoBehaviour
                 screenShots_pc[i].gameObject.SetActive(false);
             }
         }
+        
+        _aspectRatioFitterPc.aspectRatio = _defaultAspectRatio;
+        _aspectRatioFitterPc.aspectMode = _defaultMode;
+        if (projectData.AspectRatioFitter != 0) _aspectRatioFitterPc.aspectRatio = projectData.AspectRatioFitter;
+        if (projectData.AspectMode != AspectRatioFitter.AspectMode.None) _aspectRatioFitterPc.aspectMode = projectData.AspectMode;
+        
+    }
+
+    private void OpenLink()
+    {
+        Nfynt.NPlugin.OpenURL(projectData.Link);
     }
 
 

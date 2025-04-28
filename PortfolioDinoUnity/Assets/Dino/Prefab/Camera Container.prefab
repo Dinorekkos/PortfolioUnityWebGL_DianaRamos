@@ -111,7 +111,7 @@ MonoBehaviour:
   zoomSecondaryTouchInputAction: {fileID: -5797895089762086883, guid: ee1bebac3ecbd1545bb9663f0d0614b6, type: 3}
   mainCamera: {fileID: 7478421757375304677}
   homePosition: {x: 0, y: 35.99572, z: -19.65359}
-  cityPosition: {x: 0, y: -3, z: 0}
+  cityPosition: {x: 0, y: 0, z: 0}
   transitionSpeed: 1.65
   zoom: 1
   movementSpeed: 0.5
