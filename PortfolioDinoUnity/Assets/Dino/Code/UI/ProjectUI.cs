@@ -58,10 +58,8 @@ public class ProjectUI : MonoBehaviour
     void Start()
     {
         _isMobile = PortfolioInitializer.Instance.IsMobile;
-        canvasGroup.alpha = 0; 
-        projectUIPhones.DOScale(Vector3.zero, 0);
-        projectUIPC.DOScale(Vector3.zero,0);
-        
+        HideUI();
+
         if (_isMobile)
         {
             projectUIPC.gameObject.SetActive(false);
@@ -77,6 +75,13 @@ public class ProjectUI : MonoBehaviour
         
         linkButton_mobile.onClick.AddListener(OpenLink);
         linkButton_pc.onClick.AddListener(OpenLink);
+    }
+
+    private void HideUI()
+    {
+        canvasGroup.alpha = 0; 
+        projectUIPhones.DOScale(Vector3.zero, 0);
+        projectUIPC.DOScale(Vector3.zero,0);
     }
 
     private void OnDestroy()
@@ -150,14 +155,12 @@ public class ProjectUI : MonoBehaviour
         {
             projectUIPhones.gameObject.SetActive(true);
             canvasGroup.alpha = 1;
-
             projectUIPhones.DOScale(Vector3.one, duration).SetEase(showEase).SetDelay(delay);
         }
         else
         {
             projectUIPC.gameObject.SetActive(true);
             canvasGroup.alpha = 1;
-
             projectUIPC.DOScale(Vector3.one, duration).SetEase(showEase).SetDelay(delay);
         }
         
