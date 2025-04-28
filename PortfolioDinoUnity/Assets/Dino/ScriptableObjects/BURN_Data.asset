@@ -17,9 +17,11 @@ MonoBehaviour:
   description: 'Tactical stealth base in VR experience. Use multiple tools to pass
     through puzzles. '
   job: Project Manager / Developer
-  image: {fileID: 21300000, guid: f448aa695378f54458e16c35e623309b, type: 3}
-  aspectRatioFitter: 1.76
-  aspectMode: 1
+  image: {fileID: 21300000, guid: cbb58e41794609e45a582935d6db522a, type: 3}
+  aspectRatioFitterPC: 1.46
+  aspectModePC: 1
+  aspectRatioFitterMobile: 2.97
+  aspectModeMobile: 1
   link: https://docs.google.com/presentation/d/1N_fXR19sdr9ZyL3TK85RbcjY4H8tJT8IPNw1Pbb3ccc/edit?usp=sharing
   screenShots:
   - {fileID: 21300000, guid: b600464212e288a4d98624047f0a4510, type: 3}

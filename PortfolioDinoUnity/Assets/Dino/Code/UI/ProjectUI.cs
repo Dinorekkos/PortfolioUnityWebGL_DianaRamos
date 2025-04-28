@@ -35,6 +35,7 @@ public class ProjectUI : MonoBehaviour
     [SerializeField] private Image image_mobile;
     [SerializeField] private Button linkButton_mobile;
     [SerializeField] private TextMeshProUGUI linkText_mobile;
+    [SerializeField] private Image[] screenShots_mobile;
     
     [Header("Animation")]
     [SerializeField] private CanvasGroup canvasGroup;
@@ -52,32 +53,35 @@ public class ProjectUI : MonoBehaviour
     
     bool _isMobile = false;
     bool _isShowing = false;
-    private AspectRatioFitter _aspectRatioFitterPc;
+    private AspectRatioFitter _aspectRatioFitter;
     private AspectRatioFitter.AspectMode _defaultMode;
     private float _defaultAspectRatio;
-    void Start()
+    private Vector2 _defaultAnchoredPosition;
+    private void Start()
     {
         _isMobile = PortfolioInitializer.Instance.IsMobile;
-        HideUI();
-
-        if (_isMobile)
-        {
-            projectUIPC.gameObject.SetActive(false);
-        }
-        else
-        {
-            projectUIPhones.gameObject.SetActive(false);
-            _aspectRatioFitterPc = image_pc.GetComponent<AspectRatioFitter>();
-            _defaultMode = _aspectRatioFitterPc.aspectMode;
-            _defaultAspectRatio = _aspectRatioFitterPc.aspectRatio;
-            
-        }
-        
+        HideBothUIs();
+    
+        InitializeUIComponents(_isMobile ? projectUIPC : projectUIPhones, _isMobile ? image_mobile : image_pc);
+    
         linkButton_mobile.onClick.AddListener(OpenLink);
         linkButton_pc.onClick.AddListener(OpenLink);
     }
+    
+    private void InitializeUIComponents(Transform inactiveUI, Image targetImage)
+    {
+        inactiveUI.gameObject.SetActive(false);
+        _aspectRatioFitter = targetImage.GetComponent<AspectRatioFitter>();
+        //default values aspect ratio 3.47 Mobile Width controls hide Mode Mobile
+        //default values aspect ratio 0.86 PC hEIGH cONTROLS WEIDTH Mode PC
+        //default values rectTransform anchoredPosition pos y = -10f
+        
+        _defaultMode = _aspectRatioFitter.aspectMode;
+        _defaultAspectRatio = _aspectRatioFitter.aspectRatio;
+        _defaultAnchoredPosition = targetImage.rectTransform.anchoredPosition;
+    }
 
-    private void HideUI()
+    private void HideBothUIs()
     {
         canvasGroup.alpha = 0; 
         projectUIPhones.DOScale(Vector3.zero, 0);
@@ -95,9 +99,16 @@ public class ProjectUI : MonoBehaviour
     {
         if(_isShowing) return;
         projectData = data;
+
+        if (_isMobile)
+        {
+            SetMobileInfo();
+        }
+        else
+        {
+            SetPcInfo();
+        }
         
-        SetMobileInfo();
-        SetPcInfo();
     }
 
     private void SetMobileInfo()
@@ -109,6 +120,27 @@ public class ProjectUI : MonoBehaviour
         job_mobile.text = projectData.Job;
         image_mobile.sprite = projectData.Image;
         linkText_mobile.text = projectData.Link;
+        
+        for (int i = 0; i < screenShots_mobile.Length; i++)
+        {
+            if (i < projectData.ScreenShots.Length)
+            {
+                screenShots_mobile[i].sprite = projectData.ScreenShots[i];
+            }
+            else
+            {
+                screenShots_mobile[i].gameObject.SetActive(false);
+            }
+        }
+        _aspectRatioFitter.aspectRatio = _defaultAspectRatio;
+        _aspectRatioFitter.aspectMode = _defaultMode;
+        image_mobile.rectTransform.anchoredPosition = _defaultAnchoredPosition;
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_aspectRatioFitter.GetComponent<RectTransform>());
+        
+        if (projectData.AspectRatioFitterMobile != 0) _aspectRatioFitter.aspectRatio = projectData.AspectRatioFitterMobile;
+        if (projectData.AspectModeMobile != AspectRatioFitter.AspectMode.None) _aspectRatioFitter.aspectMode = projectData.AspectModeMobile;
+        if(projectData.PosYMainImage != 0) image_mobile.rectTransform.anchoredPosition = new Vector2(image_mobile.rectTransform.anchoredPosition.x, projectData.PosYMainImage);
     }
 
     private void SetPcInfo()
@@ -133,10 +165,13 @@ public class ProjectUI : MonoBehaviour
             }
         }
         
-        _aspectRatioFitterPc.aspectRatio = _defaultAspectRatio;
-        _aspectRatioFitterPc.aspectMode = _defaultMode;
-        if (projectData.AspectRatioFitter != 0) _aspectRatioFitterPc.aspectRatio = projectData.AspectRatioFitter;
-        if (projectData.AspectMode != AspectRatioFitter.AspectMode.None) _aspectRatioFitterPc.aspectMode = projectData.AspectMode;
+        _aspectRatioFitter.aspectRatio = _defaultAspectRatio;
+        _aspectRatioFitter.aspectMode = _defaultMode;
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_aspectRatioFitter.GetComponent<RectTransform>());
+        
+        if (projectData.AspectRatioFitterPC != 0) _aspectRatioFitter.aspectRatio = projectData.AspectRatioFitterPC;
+        if (projectData.AspectModePC != AspectRatioFitter.AspectMode.None) _aspectRatioFitter.aspectMode = projectData.AspectModePC;
         
     }
 
@@ -149,43 +184,32 @@ public class ProjectUI : MonoBehaviour
     public void ShowProjectUI()
     {
         if (_isShowing) return;
+
         homeUI.EnableUICity(false);
         _isShowing = true;
-        if (_isMobile)
-        {
-            projectUIPhones.gameObject.SetActive(true);
-            canvasGroup.alpha = 1;
-            projectUIPhones.DOScale(Vector3.one, duration).SetEase(showEase).SetDelay(delay);
-        }
-        else
-        {
-            projectUIPC.gameObject.SetActive(true);
-            canvasGroup.alpha = 1;
-            projectUIPC.DOScale(Vector3.one, duration).SetEase(showEase).SetDelay(delay);
-        }
-        
+
+        Transform targetUI = _isMobile ? projectUIPhones : projectUIPC;
+        targetUI.gameObject.SetActive(true);
+        canvasGroup.alpha = 1;
+        targetUI.DOScale(Vector3.one, duration).SetEase(showEase).SetDelay(delay);
     }
     
     public void HideProjectUI()
     {
         _isShowing = false;
         homeUI.EnableUICity(true);
-        if (_isMobile)
+        
+        _isShowing = false;
+        homeUI.EnableUICity(true);
+
+        Transform targetUI = _isMobile ? projectUIPhones : projectUIPC;
+
+        targetUI.DOScale(Vector3.zero, duration).SetEase(hideEase).onComplete += () =>
         {
-            projectUIPhones.DOScale(Vector3.zero, duration).SetEase(hideEase).onComplete += () =>
-            {
-                canvasGroup.alpha = 0;
-                projectUIPhones.gameObject.SetActive(false);
-            };
-        }
-        else
-        {
-            projectUIPC.DOScale(Vector3.zero, duration).SetEase(hideEase).onComplete += () =>
-            {
-                canvasGroup.alpha = 0;
-                projectUIPC.gameObject.SetActive(false);
-            };
-        }
+            canvasGroup.alpha = 0;
+            targetUI.gameObject.SetActive(false);
+            CameraController.Instance.SetCameraStateCity();
+        };
     }
     
 }

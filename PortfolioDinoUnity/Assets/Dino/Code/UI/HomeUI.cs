@@ -11,6 +11,8 @@ namespace DINO
         [SerializeField] private Button _homeButton;
         [SerializeField] private CanvasGroup homeCanvasGroup;
         [SerializeField] private CanvasGroup cityCanvasGroup;
+        [SerializeField] private RectTransform infoMobile;
+        [SerializeField] private RectTransform infoPC;
         #endregion
         #region Unity Methods
         void Start()
@@ -30,6 +32,18 @@ namespace DINO
 
                 HandleUIVisible();
             });
+
+            if (PortfolioInitializer.Instance.IsMobile)
+            {
+                
+                infoMobile.gameObject.SetActive(true);
+                infoPC.gameObject.SetActive(false);
+            }
+            else
+            {
+                infoMobile.gameObject.SetActive(false);
+                infoPC.gameObject.SetActive(true);
+            }
             
         }
 

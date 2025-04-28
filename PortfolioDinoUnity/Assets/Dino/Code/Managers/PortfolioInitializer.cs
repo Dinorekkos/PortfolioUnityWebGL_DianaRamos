@@ -19,8 +19,8 @@ public class PortfolioInitializer : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        // _isMobile = Application.isMobilePlatform;
-        _isMobile = true;
+        _isMobile = Application.isMobilePlatform;
+        // _isMobile = true;
     }
     
 }

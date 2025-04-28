@@ -18,7 +18,11 @@ MonoBehaviour:
     music, emotions and color are mixed.
   job: Game Developer/ Director
   image: {fileID: 21300000, guid: 75c2b276e71066643812581b32a765d5, type: 3}
-  aspectRatioFitter: 3.25
+  aspectRatioFitterPC: 3
+  aspectModePC: 2
+  aspectRatioFitterMobile: 0
+  aspectModeMobile: 0
+  posYMainImage: 0
   link: https://dinorekkosgd.itch.io/your-place-dinorekkos
   screenShots:
   - {fileID: 21300000, guid: a932467ba78b3584896961c54d742d8d, type: 3}

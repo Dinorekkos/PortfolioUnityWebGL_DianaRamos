@@ -130,8 +130,15 @@ public class CameraController : MonoBehaviour
         
         ResetCameraRotation();
         DoTransition(targetPosition);
-        
-        
+    }
+    
+    public void SetCameraStateBuilding()
+    {
+        cameraState = CameraStates.BuildingUI;
+    }
+    public void SetCameraStateCity()
+    {
+        cameraState = CameraStates.City;
     }
 
     #region Input

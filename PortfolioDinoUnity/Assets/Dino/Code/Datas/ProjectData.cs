@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace DINO
@@ -13,8 +14,17 @@ namespace DINO
         [SerializeField] private string description;
         [SerializeField] private string job;
         [SerializeField] private Sprite image;
-        [SerializeField] private float aspectRatioFitter = 0;
-        [SerializeField] private AspectRatioFitter.AspectMode aspectMode;
+        
+        [Header("Aspect Ratio Fitter")]
+        [SerializeField] private float aspectRatioFitterPC = 0; 
+        [SerializeField] private AspectRatioFitter.AspectMode aspectModePC;
+        
+        [SerializeField] private float aspectRatioFitterMobile = 0;
+        [SerializeField] private AspectRatioFitter.AspectMode aspectModeMobile;
+        [SerializeField] private float posYMainImage = 0;
+        
+        
+        
         [SerializeField] private string link;
         [SerializeField] private Sprite[] screenShots;
         public string ProjectName => projectName;
@@ -24,8 +34,10 @@ namespace DINO
         public string Link => link;
         public string Job => job;
         public Sprite[] ScreenShots => screenShots;
-        public float AspectRatioFitter => aspectRatioFitter;
-
-        public AspectRatioFitter.AspectMode AspectMode => aspectMode;
+        public float AspectRatioFitterPC => aspectRatioFitterPC;
+        public AspectRatioFitter.AspectMode AspectModePC => aspectModePC;
+        public float AspectRatioFitterMobile => aspectRatioFitterMobile;
+        public AspectRatioFitter.AspectMode AspectModeMobile => aspectModeMobile;
+        public float PosYMainImage => posYMainImage;
     }
 }

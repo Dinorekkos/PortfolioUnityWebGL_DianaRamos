@@ -50,6 +50,8 @@ public class RaycastInteraction : MonoBehaviour
                 if(CameraController.Instance.IsCameraZooming || CameraController.Instance.IsCameraZooming) return;
                 projectUI.SetInfo(building.ProjectData);
                 projectUI.ShowProjectUI();
+                CameraController.Instance.SetCameraStateBuilding();
+                // Debug.Log("Showing Project UI");
             }
         }
     }

@@ -5,6 +5,6 @@
         None,
         Home,
         City,
-        Building
+        BuildingUI,
     }
 }
