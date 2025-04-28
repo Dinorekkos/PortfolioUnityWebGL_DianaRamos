@@ -22,13 +22,13 @@ namespace DINO
             _cityButton.onClick.AddListener(() =>
             {
                 HomeController.Instance.GoToCity();
-                AudioManager.Instance.PlayAudio("Transition1");
+                // AudioManager.Instance.PlayAudio("Transition1");
                 HandleUIVisible();
             });
             _homeButton.onClick.AddListener(() =>
             {
                 HomeController.Instance.GoToHome();
-                AudioManager.Instance.PlayAudio("Transition2");
+                // AudioManager.Instance.PlayAudio("Transition2");
 
                 HandleUIVisible();
             });

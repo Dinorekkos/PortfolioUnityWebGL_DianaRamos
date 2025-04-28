@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectName: Little Sim World
   studioName: Blue Gravity Studios
-  description: A journey of self-discovery and self-love. In this narrative adventure,
-    music, emotions and color are mixed.
+  description: Worked on multiplayer and audio development for Little Sim World,
+    a charming 2D life simulation game set in a lively small town.
   job: 'Multiplayer Dev / FMOD Implementation '
   image: {fileID: 21300000, guid: 7fcc8f3307eba394d99399f6185f26e5, type: 3}
   aspectRatioFitterPC: 0
   aspectModePC: 0
   aspectRatioFitterMobile: 0
   aspectModeMobile: 0
+  posYMainImage: 0
   link: https://store.steampowered.com/app/1429880/Little_Sim_World/
   screenShots:
   - {fileID: 21300000, guid: e56e6e9356166514cad65764f7364f35, type: 3}
