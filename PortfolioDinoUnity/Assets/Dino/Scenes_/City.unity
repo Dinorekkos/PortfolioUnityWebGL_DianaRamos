@@ -9346,7 +9346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbb58e41794609e45a582935d6db522a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 53a78f3dd3603934a9a036c3a046049d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9621,7 +9621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56a3e22a2087f340b7693398f371d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectData: {fileID: 11400000, guid: 7efde37c12ff32449a28ce064c39860d, type: 2}
+  projectData: {fileID: 11400000, guid: 66b3c061a9ba52b4c99ecb0a4945c1ee, type: 2}
 --- !u!65 &944135066
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15706,7 +15706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 223013315176181468, guid: c2d04eb9a234ecd4591bb33d80e0a37d, type: 3}
       propertyPath: m_Name
-      value: Pin_YourPlace
+      value: Pin_DNP
       objectReference: {fileID: 0}
     - target: {fileID: 1183606024848117901, guid: c2d04eb9a234ecd4591bb33d80e0a37d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -15719,7 +15719,7 @@ PrefabInstance:
     - target: {fileID: 8285815468478806795, guid: c2d04eb9a234ecd4591bb33d80e0a37d, type: 3}
       propertyPath: projectData
       value: 
-      objectReference: {fileID: 11400000, guid: 7efde37c12ff32449a28ce064c39860d, type: 2}
+      objectReference: {fileID: 11400000, guid: 66b3c061a9ba52b4c99ecb0a4945c1ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
