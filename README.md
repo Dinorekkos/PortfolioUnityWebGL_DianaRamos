@@ -3,3 +3,8 @@ This is my web portfolio. I wanted to present my skills and my vision as a game 
 3D Assets: POLYGON- Mini city pack https://syntystore.com/products/polygon-mini-city-pack?variant=44121576767740
 
 My Portfolio: [http://dianaramosgamedev.com](https://dianargamedev.com)
+
+![Portfolio1](images/Portfolio_2025.png)
+![Portfolio1](images/Portfolio_2025.2.png)
+![Portfolio1](images/Portfolio_2025.3.png)
+
