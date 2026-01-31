@@ -11,12 +11,10 @@ namespace DINO
         [SerializeField] private Button _homeButton;
         [SerializeField] private CanvasGroup homeCanvasGroup;
         [SerializeField] private CanvasGroup cityCanvasGroup;
+        [SerializeField] private RectTransform infoMobile;
+        [SerializeField] private RectTransform infoPC;
         #endregion
-
         #region Unity Methods
-
-        
-
         void Start()
         {
             _homeButton.image.DOFade(0, 0);
@@ -24,19 +22,32 @@ namespace DINO
             _cityButton.onClick.AddListener(() =>
             {
                 HomeController.Instance.GoToCity();
+                // AudioManager.Instance.PlayAudio("Transition1");
                 HandleUIVisible();
             });
             _homeButton.onClick.AddListener(() =>
             {
                 HomeController.Instance.GoToHome();
+                // AudioManager.Instance.PlayAudio("Transition2");
+
                 HandleUIVisible();
             });
+
+            if (PortfolioInitializer.Instance.IsMobile)
+            {
+                
+                infoMobile.gameObject.SetActive(true);
+                infoPC.gameObject.SetActive(false);
+            }
+            else
+            {
+                infoMobile.gameObject.SetActive(false);
+                infoPC.gameObject.SetActive(true);
+            }
             
         }
 
         #endregion
-
-
         #region public methods
 
         public void OpenSocialMedia(string url)

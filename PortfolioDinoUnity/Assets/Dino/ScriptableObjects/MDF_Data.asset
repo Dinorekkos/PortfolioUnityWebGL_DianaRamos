@@ -18,4 +18,13 @@ MonoBehaviour:
     Indie mexican mobile game with currently 8.5 million downloads.
   job: Programmer/General Implentations/Bug Fixes
   image: {fileID: 21300000, guid: 596b2e38321589d41b7ea8b3e7aae7a1, type: 3}
-  link: https://play.google.com/store/apps/details?id=com.HyperBeardGames.MyDearFarm&hl=en&gl=US
+  aspectRatioFitterPC: 0
+  aspectModePC: 0
+  aspectRatioFitterMobile: 0
+  aspectModeMobile: 0
+  posYMainImage: 11
+  link: https://hyperbeard.com/game/mydearfarm/
+  screenShots:
+  - {fileID: 21300000, guid: 72103bac07732194a94986bbc788d243, type: 3}
+  - {fileID: 21300000, guid: d1c2c823af6e4c545a48f6255137fc15, type: 3}
+  - {fileID: 21300000, guid: 10cbb733ea07cb64d9c08904ffe801da, type: 3}
